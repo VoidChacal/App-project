@@ -24,4 +24,9 @@
     font-weight: bold;
     font-family: 'FontBas';
     height: 9vh;
+    width: 39vw;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }

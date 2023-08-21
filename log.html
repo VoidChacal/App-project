@@ -1,207 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="assets/css/log.css">
-    <script src="assets/java/javaPrinc.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.js" integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg=" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/39cab4bf95.js" crossorigin="anonymous"></script>
-</head>
-<body class="RaibowBg-1">
-    <div class="modal" id="modal">
-        <p class="TextModal" id="ModalMensage">...</p>
-        <button class="btnModal" onclick="modalX('#modal', 0)"> ok </button>
-    </div>
-    <a href="index.html" class="Return"><i class="fa-solid fa-arrow-left"></i></a>
-    <div class="header2 ds-flexC">
-        <label class="title">Login</label>
-    </div>
-    <div class="FormCard" id="Frm">
-        <div class="logoForm">Logo</div>
-        <div class="inputs">
-            <div class="input">
-                <i class="icon fa-solid fa-envelope"></i>
-                <input type="email" class="inputText" placeholder="Email" id="EmailInput">
-                <label class="inputError" id="Error0"></label>
-            </div>
-            <div class="input">
-                <i class="icon fa-solid fa-lock"></i>
-                <input type="password" class="inputText" placeholder="senha" id="SenhaInput">
-                <label class="inputError" id="Error1"></label>
-            </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/index.css">
+        <link rel="stylesheet" href="assets/css/log.css">
+        <script src="assets/java/javaPrinc.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.js" integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg=" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/39cab4bf95.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="RaibowBg-1">
+        <div class="modal" id="modal">
+            <p class="TextModal" id="ModalMensage">...</p>
+            <button class="btnModal" onclick="modalX('#modal', 0)"> ok </button>
         </div>
-        <button class="LmSenha" onclick="Pass(1)">Esqueci a senha</button>
-    </div>
-    <button class="btn bt" id="EnvA" onclick="FunCad(['#EmailInput', '#SenhaInput'], ['#Error0','#Error1'])">Entrar</button>
-    <div class="fotter ds-flexC">
-        <img src="assets/imgs/Bussy.png" class="bus">
-    </div>
-    <script>
-        function modalText(id, text){
-            ocultar(id[1], 1);
-            let modalText = document.querySelector(id[0]);
-            modalText.innerHTML = text;
-        }
-        
-        function modalX(id, fun){
-            let time = 700;
-            let div = document.querySelector(id);
-            div.style.animation = (time/1000)+'s modalSumir linear';
-            setTimeout(()=>{
-                div.style.animation = (time/1000)+'s modal linear';
-                ocultar(id,0);
-            },time);
-        }
-        function Pass(passo){
-            let frm = document.querySelector('#Frm');
-            let btn = document.querySelector('#EnvA');
-            if(passo == 0){
-                frm.innerHTML = `
-                <div class="logoForm">Logo</div>
-                <div class="inputs">
-                    <div class="input">
-                        <i class="icon fa-solid fa-envelope"></i>
-                        <input type="email" class="inputText" placeholder="Email" id="EmailInput">
-                        <label class="inputError" id="Error0"></label>
-                    </div>
-                    <div class="input">
-                        <i class="icon fa-solid fa-lock"></i>
-                        <input type="password" class="inputText" placeholder="senha" id="SenhaInput">
-                        <label class="inputError" id="Error1"></label>
-                    </div>
+        <a href="index.html" class="Return"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header2 ds-flexC">
+            <label class="title">Login</label>
+        </div>
+        <div class="FormCard" id="Frm">
+            <div class="logoForm"></div>
+            <div class="inputs">
+                <div class="input">
+                    <i class="icon fa-solid fa-envelope"></i>
+                    <input type="email" class="inputText" placeholder="Email" id="EmailInput">
+                    <label class="inputError" id="Error0"></label>
                 </div>
-                <button class="LmSenha" onclick="Pass(1)">Esqueci a senha</button>
-                `;
-                btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="FunCad([\'#EmailInput\', \'#SenhaInput\'], [\'#Error0\',\'#Error1\'])">Entrar</button>';
-            }else if(passo == 1){
-                //email tem que ser valido
-                if(document.querySelector('#EmailInput').value != ''){
-                    let lp = false;
-                    let cod = 0;
-                    while(lp==false){
-                        let nuns = numberRadom(9, 0, 6);
-                        cod = Codigo(nuns.length, nuns);
-                        if(!isNaN(cod)){
-                            lp = true;
-                        }
-                    }
-                    //Cod para mandar email
+                <div class="input">
+                    <i class="icon fa-solid fa-lock"></i>
+                    <input type="password" class="inputText" placeholder="senha" id="SenhaInput">
+                    <label class="inputError" id="Error1"></label>
+                </div>
+            </div>
+            <button class="LmSenha" onclick="Pass(1)"><pre>Esqueci</pre><pre>a</pre><pre>senha</pre></button>
+        </div>
+        <button class="btn bt" id="EnvA" onclick="FunCad(['#EmailInput', '#SenhaInput'], ['#Error0','#Error1'])">Entrar</button>
+        <div class="fotter ds-flexC">
+            <img src="assets/imgs/Bussy.png" class="bus">
+        </div>
+        <script>
+            function Pass(passo){
+                let frm = document.querySelector('#Frm');
+                let btn = document.querySelector('#EnvA');
+                if(passo == 0){
                     frm.innerHTML = `
                     <div class="logoForm">Logo</div>
                     <div class="inputs">
-                        <p>
-                            Um código foi enviado em seu e-mail escreva-o abaixo para poder trocar a Senha.
-                        </p>
                         <div class="input">
-                            <input type="number" class="inputText" placeholder="Código De Verificação" id="CodInput" minlength="6" maxlength="6">
-                            <label class="inputError" id="Error2"></label>
+                            <i class="icon fa-solid fa-envelope"></i>
+                            <input type="email" class="inputText" placeholder="Email" id="EmailInput">
+                            <label class="inputError" id="Error0"></label>
+                        </div>
+                        <div class="input">
+                            <i class="icon fa-solid fa-lock"></i>
+                            <input type="password" class="inputText" placeholder="senha" id="SenhaInput">
+                            <label class="inputError" id="Error1"></label>
+                        </div>
+                    </div>
+                    <button class="LmSenha" onclick="Pass(1)">Esqueci a senha</button>
+                    `;
+                    btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="FunCad([\'#EmailInput\', \'#SenhaInput\'], [\'#Error0\',\'#Error1\'])">Entrar</button>';
+                }else if(passo == 1){
+                    //email tem que ser valido
+                    if(document.querySelector('#EmailInput').value != ''){
+                        let lp = false;
+                        let cod = 0;
+                        while(lp==false){
+                            let nuns = numberRadom(9, 0, 6);
+                            cod = Codigo(nuns.length, nuns);
+                            if(!isNaN(cod)){
+                                lp = true;
+                            }
+                        }
+                        //Cod para mandar email
+                        frm.innerHTML = `
+                        <div class="logoForm">Logo</div>
+                        <div class="inputs">
+                            <h3>
+                                <pre>Um</pre>
+                                <pre>código</pre>
+                                <pre>foi</pre>
+                                <pre>enviado</pre>
+                                <pre>em</pre>
+                                <pre>seu</pre>
+                                <pre>e-mail</pre>
+                                <pre>escreva-o</pre>
+                                <pre>abaixo</pre>
+                                <pre>para</pre>
+                                <pre>poder</pre>
+                                <pre>trocar</pre>
+                                <pre>a</pre>
+                                <pre>Senha.</pre>
+                            </h3>
+                            <div class="input">
+                                <input type="number" class="inputText" placeholder="Código De Verificação" id="CodInput" minlength="6" maxlength="6">
+                                <label class="inputError" id="Error2"></label>
+                            </div>
+                        </div>
+                        `;
+                        btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="VerCod('+cod+')">Verificar</button>';
+                    }
+                    else{
+                        modalText(['#ModalMensage','#modal'], '<b>Email</b><b>primeiro</b><b>amigo!!</b>');
+                    }
+                }
+            }
+            
+            function FunCad(inputs, errors){
+                let vls = [
+                    document.querySelector(inputs[0]).value,
+                    document.querySelector(inputs[1]).value
+                ];
+                let lbErros =[
+                    document.querySelector(errors[0]),
+                    document.querySelector(errors[1])
+                ];
+                //buscar dados já existentes
+                let dtVer = [
+                    'Bus@email.com',
+                    'Peruibe1'
+                ];
+                let ver = [
+                    (vls[0]==dtVer[0]? 1:0),
+                    (vls[1]==dtVer[1]? 1:0)
+                ];
+
+                if(ver[0]==0 || ver[1]==0){
+                    let text = ['Email', 'E/Ou senha Esta incorreta'];
+                    lbErros[0].innerHTML = text[0];
+                    lbErros[1].innerHTML = text[1];
+                }else{
+                    //logar user
+                    redirect('home.html');
+                };
+            };
+
+            function VerCod(cod){
+                let vl = document.querySelector('#CodInput').value;
+                let lbErro = document.querySelector('#Error2');
+                let ver = vl==cod? 1:0;
+
+                if(ver==0){
+                    let text = 'Codigo incorreto';
+                    lbErro.innerHTML = text;
+                }else{
+                    lbErro.innerHTML = '';
+                    let frm = document.querySelector('#Frm');
+                    let btn = document.querySelector('#EnvA');
+                    frm.innerHTML = `
+                    <div class="logoForm">Logo</div>
+                    <div class="inputs">
+                        <div class="input">
+                            <i class="icon fa-solid fa-lock"></i>
+                            <input type="password" class="inputText" placeholder="Nova senha" id="SenhaInput">
+                            <label class="inputError" id="Error0"></label>
+                        </div>
+                        <div class="input">
+                            <i class="icon fa-solid fa-lock"></i>
+                            <input type="password" class="inputText" placeholder="Confirmar senha" id="SenhaInputVerific">
+                            <label class="inputError" id="Error1"></label>
                         </div>
                     </div>
                     `;
-                    btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="VerCod('+cod+')">Verificar</button>';
+                    btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="SenhaVer([\'#SenhaInputVerific\', \'#SenhaInput\'], [\'#Error0\',\'#Error1\'])">Atualizar</button>';
+                };
+            }
+            function SenhaVer(inputs, errors){
+                let vls = [
+                    document.querySelector(inputs[0]).value,
+                    document.querySelector(inputs[1]).value
+                ];
+                let lbErros =[
+                    document.querySelector(errors[0]),
+                    document.querySelector(errors[1])
+                ];
+
+                let quest = vls[0]==vls[1] ? true:false;
+                if(quest){
+                    lbErros[1].innerHTML = '';
+                    let frm = document.querySelector('#Frm');
+                    let btn = document.querySelector('#EnvA');
+                    frm.innerHTML = `
+                    <div class="logoForm">Logo</div>
+                    <div class="inputs">
+                        <div class="input">
+                            <i class="icon fa-solid fa-envelope"></i>
+                            <input type="email" class="inputText" placeholder="Email" id="EmailInput">
+                            <label class="inputError" id="Error0"></label>
+                        </div>
+                        <div class="input">
+                            <i class="icon fa-solid fa-lock"></i>
+                            <input type="password" class="inputText" placeholder="senha" id="SenhaInput">
+                            <label class="inputError" id="Error1"></label>
+                        </div>
+                    </div>
+                    <button class="LmSenha" onclick="Pass(1)"><pre>Esqueci</pre><pre>a</pre><pre>senha</pre></button>
+                    `;
+                    btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="FunCad([\'#EmailInput\', \'#SenhaInput\'], [\'#Error0\',\'#Error1\'])">Entrar</button>';
                 }else{
-                    modalText(['#ModalMensage','#modal'], '<b>Email</b><b>primeiro</b><b>amigo!!</b>');
+                    lbErros[1].innerHTML = 'Senhas diferentes!!';
                 }
             }
-        }
-        
-        function FunCad(inputs, errors){
-            let vls = [
-                document.querySelector(inputs[0]).value,
-                document.querySelector(inputs[1]).value
-            ];
-            let lbErros =[
-                document.querySelector(errors[0]),
-                document.querySelector(errors[1])
-            ];
-            let dtVer = [
-                'Bus@email.com',
-                'Peruibe1'
-            ];
-            let ver = [
-                (vls[0]==dtVer[0]? 1:0),
-                (vls[1]==dtVer[1]? 1:0)
-            ];
-
-            if(ver[0]==0 || ver[1]==0){
-                let text = ['Email', 'E/Ou senha Esta incorreta'];
-                lbErros[0].innerHTML = text[0];
-                lbErros[1].innerHTML = text[1];
-            }else{
-                //logar user
-                lbErros[0].innerHTML = '';
-                lbErros[1].innerHTML = '';
-            };
-        };
-
-        function VerCod(cod){
-            let vl = document.querySelector('#CodInput').value;
-            let lbErro = document.querySelector('#Error2');
-            let ver = vl==cod? 1:0;
-
-            if(ver==0){
-                let text = 'Codigo incorreto';
-                lbErro.innerHTML = text;
-            }else{
-                lbErro.innerHTML = '';
-                let frm = document.querySelector('#Frm');
-                let btn = document.querySelector('#EnvA');
-                frm.innerHTML = `
-                <div class="logoForm">Logo</div>
-                <div class="inputs">
-                    <div class="input">
-                        <i class="icon fa-solid fa-lock"></i>
-                        <input type="password" class="inputText" placeholder="Nova senha" id="SenhaInput">
-                        <label class="inputError" id="Error0"></label>
-                    </div>
-                    <div class="input">
-                        <i class="icon fa-solid fa-lock"></i>
-                        <input type="password" class="inputText" placeholder="Confirmar senha" id="SenhaInputVerific">
-                        <label class="inputError" id="Error1"></label>
-                    </div>
-                </div>
-                `;
-                btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="SenhaVer([\'#SenhaInputVerific\', \'#SenhaInput\'], [\'#Error0\',\'#Error1\'])">Atualizar</button>';
-            };
-        }
-        function SenhaVer(inputs, errors){
-            let vls = [
-                document.querySelector(inputs[0]).value,
-                document.querySelector(inputs[1]).value
-            ];
-            let lbErros =[
-                document.querySelector(errors[0]),
-                document.querySelector(errors[1])
-            ];
-
-            let quest = vls[0]==vls[1] ? true:false;
-            if(quest){
-                lbErros[1].innerHTML = '';
-                let frm = document.querySelector('#Frm');
-                let btn = document.querySelector('#EnvA');
-                frm.innerHTML = `
-                <div class="logoForm">Logo</div>
-                <div class="inputs">
-                    <div class="input">
-                        <i class="icon fa-solid fa-envelope"></i>
-                        <input type="email" class="inputText" placeholder="Email" id="EmailInput">
-                        <label class="inputError" id="Error0"></label>
-                    </div>
-                    <div class="input">
-                        <i class="icon fa-solid fa-lock"></i>
-                        <input type="password" class="inputText" placeholder="senha" id="SenhaInput">
-                        <label class="inputError" id="Error1"></label>
-                    </div>
-                </div>
-                `;
-                btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="FunCad([\'#EmailInput\', \'#SenhaInput\'], [\'#Error0\',\'#Error1\'])">Entrar</button>';
-            }else{
-                lbErros[1].innerHTML = 'Senhas diferentes!!';
-            }
-        }
-    </script>
-</body>
+        </script>
+    </body>
 </html>

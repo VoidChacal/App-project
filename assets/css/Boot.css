@@ -1,7 +1,4 @@
-.RaibowBg-1{    
-    background-color: rgb(62 193 184);
-    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
-}
+
 .ds-flexC{
     display: flex;
     flex-direction: column;
@@ -50,13 +47,19 @@
         align-items: center;
         height: 27vh;
     }
-        .inputs p{
+        .inputs h3{
             color: var(--corA);
             font-size: 2vh;
-            width: 55vw;
+            width: 56vw;
             font-weight: bold;
             font-family: 'FontBas';
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
+            .inputs h3 pre{
+                margin-right: 1.5vw;
+            }
         .input{
             display: flex;
             flex-direction: column;

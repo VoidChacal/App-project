@@ -1,3 +1,7 @@
+function uploadImage(file, nmUser, mailUser) {
+    //baixar img
+}
+
 function numberRadom(max, min, qt){
     let nuns = [];
     for(var i=0; i<qt; i++){
@@ -48,4 +52,50 @@ function ocultar(obj, es){
 	}else{
 		div.style.display = 'none';
 	};
+};
+
+function modalText(id, text){
+    ocultar(id[1], 1);
+    let modalText = document.querySelector(id[0]);
+    modalText.innerHTML = text;
+}
+
+function modalX(id, fun){
+    if(fun==0){
+        let time = 700;
+        let div = document.querySelector(id);
+        div.style.animation = (time/1000)+'s modalSumir linear';
+        setTimeout(()=>{
+            div.style.animation = (time/1000)+'s modal linear';
+            ocultar(id,0);
+        },time);
+    }
+}
+
+function redirect(page) {
+    window.location.href = page;
+}
+
+function fade(id, fun) {
+	if(fun==1){
+		ocultar(id, fun);
+	}else{
+		let time = 700;
+		let div = document.querySelector(id);
+		div.style.animation = (time/1000)+'s fade-in linear';
+		setTimeout(()=>{
+			div.style.animation = (time/1000)+'s fade linear';
+			div.style.display = 'none';	
+		},time);
+	}
+};
+
+function menuIcon(div, divMost, icon, fun, cor) {
+    fade(divMost, fun);
+    div.innerHTML = '<i class="' + icon[fun] + '"></i>';
+    div.style.color = cor[fun];
+
+    fun = fun == 0 ? 1 : 0;
+    let onclick = 'menuIcon(this, \'' + divMost + '\', [\'' + icon[0] + '\', \'' + icon[1] + '\'], ' + fun + ', [\'' + cor[0] + '\', \'' + cor[1] + '\'])';
+    div.setAttribute("onclick", onclick);
 };

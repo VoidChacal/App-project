@@ -1,4 +1,4 @@
-@import "Boot.css"; @import "vars.css"; @import "log.css"; * {
+@import 'vars.css'; * {
   margin: 0px;
   padding: 0px;
 }
@@ -49,4 +49,35 @@ body {
 @font-face {
   font-family: 'FontBas';
   src: url('../fonts/Warownia-x5nq.otf') format('truetype');
+}
+
+.irTop {
+  position: fixed;
+  z-index: 3;
+  width: 10vh;
+  height: 10vh;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 82vh 0vw 0vh 83vw;
+  background-color: var(--none);
+  border: none;
+}
+
+.irTop:hover {
+  cursor: pointer;
+  margin: 82vh 0vw 0vh 83vw;
+  height: 11vh;
+  width: 12vh;
+}
+
+.irTop:active {
+  cursor: grabbing;
+  margin: 82vh 0vw 0vh 83vw;
+  height: 9vh;
+  width: 6vw;
+}
+
+.flexDisplay {
+  display: flex;
 }

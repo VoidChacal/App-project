@@ -1,0 +1,433 @@
+@import 'preset.css';
+body{
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+.Block-top{
+	width: 100vw;
+	padding: 1vh 0vw;
+	background-color: var(--Invisible);
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	z-index: 2;
+	backdrop-filter: blur(2px);
+}
+	.certerTop{
+		width: 90vw;
+		justify-content: space-between;
+		align-items: center;
+	}
+		.FastAcess{
+			width: 68vw;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+		}
+			.FastAcess .topicOne{
+				width: 13vw;
+				background-color: rgb(11 0 37 / 30%);
+				border-radius: 0.5vw;
+				font-size: 2vh;
+				font-weight: normal;
+			}
+		.logoTop{
+			height: 6vh;
+			width: 6vh;
+			background-image: url('../imgs/Logo2.png');
+			background-position: center;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+		.MenuBar{
+			background: var(--none);
+			border: none;
+			color: var(--corD);
+			font-size: 4vh;
+		}
+			.MenuBar:hover{
+				cursor: pointer;
+				font-size: 5vh;
+			}
+			.MenuBar:active{
+				cursor: grabbing;
+				font-size: 3vh;
+			}
+.Block-One{
+	height: 130vh;
+	width: 100vw;
+	flex-direction: column;
+	background-color: var(--corE);
+	background-image: url('../imgs/map.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-blend-mode: multiply;
+}
+	.BigBlockOne{
+		height: 90vh;
+		width: 100vw;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		background-color: rgba(0 0 0 / 10%);
+		backdrop-filter: blur(3px);
+	}
+		.textOne{
+			width: 23vw;
+			height: 40vh;
+			flex-direction: column;
+			align-items: self-start;
+			justify-content: space-around;
+		}
+			.topicOne{
+				background-color: var(--Invisible);
+				border: none;
+				color: var(--corD);
+				font-family: sans-serif;
+				font-weight: bold;
+				font-size: 2.5vh;
+				padding: 1vh 0vw;
+				text-align: center;
+			}
+				.topicOne:hover{
+					cursor: pointer;
+					border-bottom: 3px solid var(--corB);
+				}
+				.topicOne:active{
+					cursor: grabbing;
+					background-color: var(--corB);
+					padding: 1vh;
+					border-radius: 0.2vw;
+				}
+		.text2One{
+			width: 40vw;
+			height: 50vh;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-image: url('../imgs/Logo.png');
+		}
+	.shortBlockOne{
+		width: 100vw;
+		height: 40vh;
+		align-items: self-start;
+		justify-content: space-around;
+		background-color: rgba(0 0 0 / 10%);
+		backdrop-filter: blur(3px);
+	}
+		.cardTextOne{
+			height: 48vh;
+			align-items: flex-start;
+			justify-content: space-around;
+			flex-direction: column;
+			width: 19vw;
+		}
+			.iconShort0{
+				background-color: var(--corC);
+				color: var(--corB);
+				padding: 1vh;
+				font-size: 5vh;
+				border-radius: 0.5vw;
+			}
+			.palagrafyOne{
+				height: 36vh;
+				width: 100%;
+				color: var(--corD);
+				font-size: 2.5vh;
+				font-family: sans-serif;
+				font-style: italic;
+				word-wrap: break-word;
+				text-align: left;
+			}
+.LeftMenu{
+	position: fixed;
+	height: 100vh;
+	width: 40vw;
+	display: none;
+	flex-direction: column;
+	background-color: var(--corC);
+	z-index: 3;
+	border-right: 3px solid black;
+	box-shadow: 48vw 0px 0px 12vw rgb(11 26 28 / 42%);
+	align-items: center;
+}
+	.exitLeftMenu{
+		color: var(--corC);
+		font-size: 5vh;
+		position: absolute;
+		margin: 3vh 0vw 0vh 47vw;
+		background-color: var(--corB);
+		border-radius: 50px;
+	}
+		.exitLeftMenu:hover{
+			cursor: pointer;
+			border: 1px solid black;
+		}
+		.exitLeftMenu:active{
+			cursor: grabbing;
+			font-size: 4vh;
+		}
+	.escCadorLogin{
+		flex-direction: column;
+		width: 30vw;
+		margin-top: 5vh;
+	}
+		.btnsManagerLtMenu{
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+		}
+			.btnLtMenu{
+				border: none;
+				width: 11vw;
+				padding: 1vh;
+				color: var(--corC);
+				background-color: var(--corB);
+				border-radius: 0.1vw;
+				font-size: 5vh;
+			}
+				.btnLtMenu:hover{
+					cursor: pointer;
+					width: 13vw;
+					background-color: var(--corD);
+				}
+				.btnLtMenu:active{
+					cursor: grabbing;
+					width: 9vw;
+					font-size: 4vh;
+					background-color: var(--corB);
+				}
+			.FormsLtMenu{
+				flex-direction: column;
+				margin-top: 2vh;
+				height: 70vh;
+				background-color: var(--corC);
+				border: 2px solid var(--corD);
+				border-radius: 0.2vw;
+				align-items: center;
+				justify-content: center;
+			}
+				.FormLtMenu{
+					display: none;
+					width: 100%;
+					height: 100%;
+					align-items: center;
+					justify-content: start;
+					flex-direction: column;
+				}
+					.FormLtMenu label{
+						color: var(--corE);
+						font-size: 5vh;
+						font-weight: bold;
+						font-family: monospace;
+						font-style: italic;
+						filter: drop-shadow(3px 3px 0px var(--corB));
+						margin-top: 4vh;
+						margin-bottom: 8vh;
+					}
+.Block-Two{
+	flex-direction: row;
+	width: 80vw;
+	padding: 9vh 10vw;
+	height: 80vh;
+	align-items: center;
+	justify-content: center;
+}
+	.meioBlock2{
+		width: 55%;
+		flex-direction: column;
+		align-items: center;
+		justify-content: start;
+		height: 100%;
+	}
+		.textBlock2{
+			height: 28vh;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			background-color: var(--corC);
+		}
+			.textBlock2 h2{
+				font-size: 4vh;
+				font-family: system-ui;
+				color: var(--corB);
+				width: 50%;
+				text-align: center;
+				font-weight: bold;
+				font-style: italic;
+			}
+			.textBlock2 p{
+				width: 40%;
+				padding: 3% 10%;
+				font-family: monospace;
+				font-weight: bold;
+				font-size: 2vh;
+				color: var(--corD);
+			}
+		.imgReprBlock2{
+			height: 52vh;
+			width: 100%;
+		}
+		.blockIconBlock2{
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			font-size: 6vh;
+			width: 50%;
+			font-family: monospace;
+			color: var(--corB);
+			height: 100%;
+		}
+			.cor2-Block2{
+				background-color: var(--corA);
+				color: var(--corC);
+			}
+.Block-Tre{
+	background-image: url('../imgs/bussyStation.png');
+	padding: 15vh 0vw;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+	.cardMost-tre{
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 100vw;
+	}
+		.cardTre{
+			background-color: rgb(11 96 206/ 90%);
+			padding: 2vh;
+			width: 18vw;
+			height: 26vh;
+			margin: 0vh 2vw 2vh 0vw;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+			.cardTre i{
+				background-color: var(--corC);
+				padding: 2vh;
+				color: var(--corB);
+				font-size: 5vh;
+				border-radius: 5vw;
+				margin-right: 13px;
+			}
+			.cardTextTre{
+				word-wrap: break-word;
+				font-size: 2vh;
+				font-family: monospace;
+				color: var(--corC);
+				font-style: italic;
+				flex-direction: column;
+			}
+				.cardTextTre label{
+					font-weight: bold;
+					font-size: 3vh;
+					font-family: system-ui;
+					font-style: normal;
+				}
+.textBlock4{
+	height: 100%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	background-color: var(--corD);
+}	
+	.BtnEntrarBlock4{
+		background-color: var(--Invisible);
+		margin-top: 4vh;
+		padding: 1vw;
+		width: 16vw;
+		color: var(--corB);
+		font-size: 3vh;
+		font-weight: bold;
+		font-family: monospace;
+		border: none;
+		border-bottom: 3px solid var(--corB);
+	}
+		.cssBlock4{
+			color: var(--corC);
+			border-bottom-color: var(--corC);
+		}
+		.BtnEntrarBlock4:hover{
+			cursor: pointer;
+			width: 20vw;
+		}
+		.BtnEntrarBlock4:active{
+			cursor: grabbing;
+			width: 14vw;
+		}
+	.cor2-Block4{
+		width: 100%;
+	}
+.Block-Five{
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 60vh;
+	padding: 5vh 0vw;
+	background-color: var(--corB);
+}
+	.centerBlock5{
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		width: 80vw;
+		height: 56vh;
+	}
+		.TextBlock5{
+			flex-direction: column;
+			align-items: self-start;
+			justify-content: start;
+			color: var(--corC);
+			font-size: 2vh;
+			font-family: monospace;
+			font-style: italic;
+			width: 40%;
+			height: 100%;
+		}
+			.TextBlock5 h3{
+				font-family: system-ui;
+				font-weight: bold;
+				font-size: 5vh;
+				font-style: normal;
+			}
+			.TextBlock5 p{
+				margin-top: 2vh;
+				width: 80%;
+				word-break: break-word;
+				text-align: center;
+			}
+		.developerBlock5{
+			flex-direction: column;
+			width: 60%;
+			height: 100%;
+			background-color: var(--corD);
+			flex-wrap: wrap;
+		}
+            .membersUser{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 23vw;
+                margin-top: 1vh;
+                margin-left: 1vw;
+            }
+                .perfilBlock5{
+                    height: 15vh;
+                    border-radius: 50vw;
+                }
+                .lbBlock5{
+                    font-size: 2vh;
+                    color: var(--corC);
+                    font-weight: bold;
+                    font-family: monospace;
+                }
