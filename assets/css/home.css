@@ -108,7 +108,7 @@
     box-shadow: 0 0px 20px 0 var(--corB);
     border: 3px solid var(--corA);
     border-radius: 25px;
-    background-color: var(--corA);
+    background-color: var(--corF);
 }
 
 .conteudo2 {
@@ -119,9 +119,13 @@
     box-shadow: 0 0px 20px 0 var(--corB);
     border: 3px solid var(--corA);
     border-radius: 25px;
-    background-color: var(--corA);
+    background-color: var(--corF);
 }
 
+.OniCirculam{
+    width: 40vw;
+    height: 40vh;
+}
 .slide {
     width: auto;
     height: 100%;
