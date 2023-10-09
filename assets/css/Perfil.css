@@ -1,0 +1,73 @@
+@import "preset.css";
+
+.ImgPerfil{
+    display: flex;
+    width: 20vw;
+    height: 11vh;
+    background-color: var(--corB);
+    border: 3px solid var(--corC);
+    border-radius: 53px;
+    margin-top: 6vh;
+    background-image: url(../imgs/perfil.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+i{
+    font-size: 2rem;
+    margin-top: 3vh;
+    left: 5vw;
+    position: absolute;
+}
+
+h1{
+    color: var(--corB);
+    font-family: monospace;
+    font-weight: bold;
+    margin-top: 8vh;
+}
+
+.Confirmar{
+    height: 10vh;
+    width: 38vw;
+    border: 3px solid var(--corA);
+    border-radius: 43px;
+    background-color: var(
+    --corB);
+    color: var(
+    --corA);
+    margin-top: 9vh;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 25px;
+    box-shadow: 0px 0px 23px var(
+    --corB);
+}
+
+.FormCard{
+    padding: 1rem;
+    margin-top: 0;
+}    
+
+.inputText{
+        color: black;
+        background-color: var(--corB);
+        border: 2px solid var(--corC);
+        border-radius: 5px;
+        padding: 1vh;
+        margin-top: 1rem;
+        font-size: 1.7vh;
+        font-weight: bold;
+        font-family: monospace;
+       
+}
+    .inputText::-webkit-input-placeholder{
+            color: var(--corA);
+ }
+ .inputText:focus{
+            color: var(--corE);
+  }
+
+  input{
+    padding: 4rem;
+  }

@@ -62,79 +62,123 @@
 }
 
 .btnMap {
-    width: 58vw;
-    height: 6vh;
+    display: flex;
+    width: 38vw;
+    height: 5vh;
     font-family: monospace;
+    text-decoration: none;
     background-color: var(--corD);
-    border: none;
     font-size: 2vh;
     font-weight: bold;
-    border-radius: 6vw 6vw 0px 0px;
-}
-
-.ADD {
-    display: flex;
-    height: 14vh;
-    flex-direction: row;
+    color: black;
+    margin-bottom: 5vh;
+    margin-left: 27vw;
+    border-radius: 6px;
+    border: black solid;
+    justify-content: center;
     align-items: center;
-    overflow: hidden;
-    width: 100vw;
 }
 
-.pages {
-    width: auto;
+.imgbtn {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 100%;
-    animation: 20s linear infinite alternate slide;
+    position: relative;
+    width: 33vw;
+    height: 9vh;
+    margin-right: 16vh;
+    flex-wrap: wrap;
+    top: 7vh;
 }
 
-.Page {
-    width: 100vw;
-    height: 100%;
+.imgInfo {
+    display: grid;
+    width: 76vw;
+    height: 23vh;
+    margin-left: 9vw;
+}
+
+.Conteudo {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--corC);
-}
-
-.conteudo {
-    width: 87vw;
-    height: 31vh;
-    margin-top: 4vh;
-    margin-bottom: 4vh;
-    box-shadow: 0 0px 20px 0 var(--corB);
-    border: 3px solid var(--corA);
-    border-radius: 25px;
-    background-color: var(--corF);
-}
-
-.conteudo2 {
-    width: 87vw;
-    height: 31vh;
-    margin-top: 4vh;
-    margin-bottom: 4vh;
-    box-shadow: 0 0px 20px 0 var(--corB);
-    border: 3px solid var(--corA);
-    border-radius: 25px;
-    background-color: var(--corF);
-}
-
-.btnEstado{
-    display: flex;
-    color: red;
-    background-color: red;
-}
-
-.OniCirculam{
-    width: 40vw;
-    height: 14vh;
-}
-.slide {
-    width: auto;
     height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+.comentar {
+    display: flex;
+}
+
+.perfilcoment {
+    height: 5vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 12vw;
+    border-radius: 20vw;
+}
+
+.rating {
+    display: flex;
+    background-color: var(--corF);
+    width: 38vw;
+    height: 4vh;
+    margin-left: 31vw;
+    flex-direction: row-reverse;
+    border-radius: 22px;
+}
+
+.rating>input {
+    display: none;
+}
+
+.rating>label {
+    position: relative;
+    width: 1.1em;
+    font-size: 2rem;
+    color: gold;
+    bottom: 8px;
+}
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0;
+}
+
+.rating>label:hover:before, .rating>label:hover~label:before {
+    opacity: 1 !important;
+}
+
+.rating>input:checked~label::before {
+    opacity: 1;
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4;
+}
+
+.informacao {
+    display: flex;
+    height: 53vh;
+    width: 93vw;
+    margin-top: 9px;
+    border: 3px solid var(--corA);
+    box-shadow: 0 0px 20px 0 var(--corB);
+    border-radius: 25px;
+    flex-direction: column;
+    font-size: 2rem;
+    background-color: var(--corF);
+    color: var(--corD);
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2vw;
+}
+
+p {
+    margin-left: 2vh;
 }
 
 .PerfilMost {
@@ -189,42 +233,4 @@
 
 .PerfilMost .info {
     color: azure;
-}
-
-@keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-400vw);
-    }
-}
-
-@keyframes fade {
-    0% {
-        display: none;
-        width: 0vw;
-        opacity: 0%;
-    }
-
-    100% {
-        display: flex;
-        width: 73vw;
-        opacity: 100%;
-    }
-}
-
-@keyframes fade-in {
-    0% {
-        display: flex;
-        opacity: 100%;
-        width: 73vw;
-    }
-
-    100% {
-        opacity: 0%;
-        width: 0vw;
-        display: none;
-    }
 }

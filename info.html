@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/cad.css">
+        <script src="assets/java/javaPrinc.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.js" integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg=" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/39cab4bf95.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="RaibowBg-1">
+        <div class="modal" id="modal">
+            <p class="TextModal" id="ModalMensage">...</p>
+            <button class="btnModal" onclick="modalX('#modal', 0)"> ok </button>
+        </div>
+        <a href="index.html" class="Return"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="header2 ds-flexC">
+            <label class="title">Cadastar</label>
+        </div>
+        <div class="FormCard" id="Frm">
+            <div class="logoForm"></div>
+            <div class="inputs">
+                <div class="input">
+                    <i class="icon fa-solid fa-user-pen"></i>
+                    <input type="text" class="inputText" placeholder="Nome de Usuário" id="NameInput">
+                </div>
+                <div class="input">
+                    <i class="icon fa-solid fa-envelope"></i>
+                    <input type="email" class="inputText" placeholder="Email" id="EmailInput">
+                    <label class="inputError" id="Error0"></label>
+                </div>
+                <div class="input">
+                    <i class="icon fa-solid fa-phone"></i>
+                    <input type="tel" class="inputText" placeholder="Telefone" id="TelInput" pattern="[0-9]{2}_[0-9]{4}-[0-9]{5}" minlength="12" maxlength="13">
+                    <label class="inputError" id="Error1">Modelo (XX_XXXX-XXXXX)</label>
+                </div>
+                <div class="input">
+                    <i class="icon fa-solid fa-map-location-dot"></i>
+                    <input type="text" class="inputText" placeholder="Endereço" id="EndInput">
+                </div>
+                <div class="input">
+                    <i class="icon fa-solid fa-lock"></i>
+                    <input type="password" class="inputText" placeholder="senha" id="SenhaInput">
+                </div>
+                <div class="input">
+                    <i class="icon fa-solid fa-square-check"></i>
+                    <input type="password" class="inputText" placeholder="Confirmar senha" id="SenhaReptInput">
+                    <label class="inputError" id="Error2"></label>
+                </div>
+            </div>
+        </div>
+        <button class="btn bt" id="EnvA" onclick="FunCad(['#NameInput', '#EmailInput', '#TelInput', '#EndInput', '#SenhaInput', '#SenhaReptInput'], ['#Error0','#Error1','#Error2'])">Cadastar</button>
+        <div class="fotter ds-flexC">
+            <img src="assets/imgs/Bussy.png" class="bus">
+        </div>
+        <script>
+            $("#InputImgEnv").change(function(){
+                let most = "#ImgMost";
+                PreViewImg(this, most);
+            });
+
+            let ess = false;
+            document.addEventListener("keydown", function(event){
+                if(event.key === "Backspace"){
+                    ess = true;
+                }else{
+                    ess = false;
+                }
+            });
+
+            document.querySelector('#TelInput').addEventListener('input', ()=>{
+                
+                let tel = document.querySelector('#TelInput');
+                let possAtl = tel.value.length-1;
+                let Ver = tel.value.slice(-1)=='_' || tel.value.slice(-1)=='-' ? false:tel.value.slice(-1);
+                let Ver2 = Ver==false? false:isNaN(Ver);
+                if(Ver2==true){
+                    tel.value = tel.value.substr(0, possAtl);
+                }else if(possAtl==1){
+                    if(!ess){
+                        tel.value += "_";
+                    }else{
+                        tel.value = tel.value.substr(0, possAtl);
+                    }
+                }else if(possAtl==6){
+                    if(!ess){
+                        tel.value += "-";
+                    }else{
+                        tel.value = tel.value.substr(0, possAtl);
+                    }
+                };
+
+            });
+            
+            function FunCad(inputs, errors){
+                let vls = [];
+                let lbErros =[];
+                for(var i = 0; i<inputs.length; i++){
+                    vls[i] = document.querySelector(inputs[i]).value;
+                }
+                for(var i = 0; i<errors.length; i++){
+                    lbErros[i] = document.querySelector(errors[i]);
+                }
+                //buscar dados já existentes
+                let dtVer = [
+                    'Bus@email.com',
+                    '17_4002-8922'
+                ];
+                let ver = [
+                    (vls[1]!=dtVer[0]? (vls[1].indexOf('@') != -1? '':'Falta o @ no Email'):'Email já existente!!!'),
+                    (vls[2] != dtVer[1] ? (vls[2].length > 13 || vls[2].length < 12 ? 'minimo de numeros é 12' : 'Modelo (XX_XXXX-XXXXX)') : 'Telefone Já Cadastrado!!!'),
+                    (vls[4]==vls[5]? '':'Senhas diferentes!!!')
+                ];
+                
+                lbErros[0].innerHTML = ver[0];
+                lbErros[1].innerHTML = ver[1];
+                lbErros[2].innerHTML = ver[2];
+                
+                if(ver[0]=='' && ver[1]=='Modelo (XX_XXXX-XXXXX)' && ver[2]==''){
+                    Pass(0, vls);
+                }
+            };
+
+            function Pass(passo, valsSave){
+                let frm = document.querySelector('#Frm');
+                let btn = document.querySelector('#EnvA');
+                let arrayValues = '[';
+                for(var i = 0; i<valsSave.length; i++){
+                    arrayValues += "'"+valsSave[i]+"'";
+                    if(i<(valsSave.length - 1)){
+                        arrayValues += ',';
+                    }
+                }
+                arrayValues += ']';
+                if(passo == 0){
+                    frm.innerHTML = `
+                    <div class="ImgPerfilInput" id="ImgMost"></div>
+                    <div class="fun">
+                        <label for="InputImgEnv" class="btnImage"><pre>Enviar</pre><pre>Foto</pre></label>
+                        <input type="file" id="InputImgEnv" name="PerfilImage" accept="image/*">
+                        <p class="palaImg"> *para pular essa etapa é só clicar no "próximo passo" e a foto acima será no momento sua foto de perfil* </p>
+                    </div>
+                    `;
+                    btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="Pass(1, '+arrayValues+')">Próximo passo</button>';
+                }
+                else if(passo == 1){
+                    //let file = $('#PerfilImage')[0].files[0];
+                    let imageUrl = "'A.png'";//uploadImage(file, valsSave[0], valsSave[1]);
+                    
+                    let lp = false;
+                    let cod = 0;
+                    while(lp==false){
+                        let nuns = numberRadom(9, 0, 6);
+                        cod = Codigo(nuns.length, nuns);
+                        if(!isNaN(cod)){
+                            lp = true;
+                        }
+                    }
+                    //Cod para mandar email
+                    frm.innerHTML = `
+                    <div class="logoForm">Logo</div>
+                    <div class="inputs">
+                        <h3>
+                            <pre>Um</pre>
+                            <pre>código</pre>
+                            <pre>foi</pre>
+                            <pre>enviado</pre>
+                            <pre>em</pre>
+                            <pre>seu</pre>
+                            <pre>e-mail</pre>
+                            <pre>escreva-o</pre>
+                            <pre>abaixo</pre>
+                            <pre>para</pre>
+                            <pre>poder</pre>
+                            <pre>trocar</pre>
+                            <pre>a</pre>
+                            <pre>Senha.</pre>
+                        </h3>
+                        <div class="input" style="margin-top: 2vh;">
+                            <input type="number" class="inputText" placeholder="Código De Verificação" id="CodInput" minlength="6" maxlength="6">
+                            <label class="inputError" id="ErrorCodVer"></label>
+                        </div>
+                    </div>
+                    `;
+                    btn.outerHTML = '<button class="btn bt" id="EnvA" onclick="VerCod('+cod+', '+arrayValues+', '+imageUrl+')">Verificar</button>';
+                }
+            }
+            function VerCod(cod, valsSave, url){
+                let vl = document.querySelector('#CodInput').value;
+                let lbErro = document.querySelector('#ErrorCodVer');
+                let ver = vl==cod? 1:0;
+
+                if(ver==0){
+                    let text = 'Codigo incorreto';
+                    lbErro.innerHTML = text;
+                }else{
+                    //logar user
+                    redirect('home.html');
+                };
+            }
+        </script>
+    </body>
+</html>

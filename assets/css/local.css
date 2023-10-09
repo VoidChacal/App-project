@@ -72,37 +72,9 @@
     border-radius: 6vw 6vw 0px 0px;
 }
 
-.ADD {
-    display: flex;
-    height: 14vh;
-    flex-direction: row;
-    align-items: center;
-    overflow: hidden;
-    width: 100vw;
-}
-
-.pages {
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 100%;
-    animation: 20s linear infinite alternate slide;
-}
-
-.Page {
-    width: 100vw;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--corC);
-}
-
 .conteudo {
-    width: 87vw;
-    height: 31vh;
+    width: 95vw;
+    height: 40vh;
     margin-top: 4vh;
     margin-bottom: 4vh;
     box-shadow: 0 0px 20px 0 var(--corB);
@@ -112,8 +84,8 @@
 }
 
 .conteudo2 {
-    width: 87vw;
-    height: 31vh;
+    width: 95vw;
+    height: 36vh;
     margin-top: 4vh;
     margin-bottom: 4vh;
     box-shadow: 0 0px 20px 0 var(--corB);
@@ -122,19 +94,9 @@
     background-color: var(--corF);
 }
 
-.btnEstado{
-    display: flex;
-    color: red;
-    background-color: red;
-}
-
 .OniCirculam{
     width: 40vw;
     height: 14vh;
-}
-.slide {
-    width: auto;
-    height: 100%;
 }
 
 .PerfilMost {
@@ -191,40 +153,3 @@
     color: azure;
 }
 
-@keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-400vw);
-    }
-}
-
-@keyframes fade {
-    0% {
-        display: none;
-        width: 0vw;
-        opacity: 0%;
-    }
-
-    100% {
-        display: flex;
-        width: 73vw;
-        opacity: 100%;
-    }
-}
-
-@keyframes fade-in {
-    0% {
-        display: flex;
-        opacity: 100%;
-        width: 73vw;
-    }
-
-    100% {
-        opacity: 0%;
-        width: 0vw;
-        display: none;
-    }
-}
