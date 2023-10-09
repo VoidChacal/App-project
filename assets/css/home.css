@@ -1,4 +1,5 @@
-@import "preset.css"; .header {
+@import "preset.css"; 
+.header {
     background-color: white;
     width: 100vw;
     flex-direction: row;
@@ -106,32 +107,62 @@
     margin-top: 4vh;
     margin-bottom: 4vh;
     box-shadow: 0 0px 20px 0 var(--corB);
-    border: 3px solid var(--corA);
-    border-radius: 25px;
+    padding: 2vw;
+    border-radius: 3vw;
     background-color: var(--corF);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: overlay;
+}
+.conteudo .scrollConted{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    height: auto;
+}
+.scrollConted .ulConteudo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    padding: 2vh 0vw;
 }
 
-.conteudo2 {
-    width: 87vw;
-    height: 31vh;
-    margin-top: 4vh;
-    margin-bottom: 4vh;
-    box-shadow: 0 0px 20px 0 var(--corB);
-    border: 3px solid var(--corA);
-    border-radius: 25px;
-    background-color: var(--corF);
+.ulConteudo img {
+    width: auto;
+    height: 5vh;
 }
 
-.btnEstado{
+.ulConteudo button {
+    width: 52vw;
+    height: 6vh;
+    font-family: monospace;
+    background-color: var(--corD);
+    border: none;
+    font-size: 2vh;
+    font-weight: bold;
+    border-radius: 3vw;
+}
+
+.TitleTextCard {
+    margin-top: 2vh;
+    color: white;
+    font-family: monospace;
+}
+
+.btnEstado {
     display: flex;
     color: red;
     background-color: red;
 }
 
-.OniCirculam{
+.OniCirculam {
     width: 40vw;
     height: 14vh;
 }
+
 .slide {
     width: auto;
     height: 100%;
